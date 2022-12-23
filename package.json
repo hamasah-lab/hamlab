@@ -34,7 +34,8 @@
     "husky": "^8.0.0",
     "lint-staged": "^13.1.0",
     "prettier": "^2.8.1",
-    "prettier-eslint": "^15.0.1"
+    "prettier-eslint": "^15.0.1",
+    "prettier-plugin-tailwindcss": "^0.2.1"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
