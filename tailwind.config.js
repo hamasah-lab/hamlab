@@ -7,7 +7,11 @@ module.exports = {
     './public/**/*.html',
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['var(--font-nunito)'],
+      },
+    },
   },
   plugins: [],
 }
