@@ -1,7 +1,10 @@
 'use client'
+import { HiOutlineBell, HiOutlineMail } from 'react-icons/hi'
+
 import { useLayoutContext } from '~/contexts/layout-context'
 import clsxm from '~/utils/clsxm'
 
+import ButtonDropdown from './button-dropdown'
 import SearchBar from './search-bar'
 import SidebarToggle from './sidebar-toggle'
 
@@ -23,6 +26,15 @@ const Navbar = () => {
         </ul>
         <SearchBar />
       </form>
+      <ul className="flex">
+        <li className="relative">
+          <ButtonDropdown icon={<HiOutlineMail />} />
+        </li>
+        <li className="relative">
+          <ButtonDropdown icon={<HiOutlineBell />} />
+        </li>
+        <li></li>
+      </ul>
     </nav>
   )
 }
