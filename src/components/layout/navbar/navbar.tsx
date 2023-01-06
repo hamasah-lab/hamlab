@@ -6,6 +6,8 @@ import { useLayoutContext } from '~/contexts/layout-context'
 import clsxm from '~/utils/clsxm'
 
 import ButtonDropdown from './button-dropdown'
+import ButtonDropdownItem from './button-dropdown-item'
+import IconButtonDropdown from './icon-button-dropdown'
 import profile from './profile.png'
 import SearchBar from './search-bar'
 import SidebarToggle from './sidebar-toggle'
@@ -30,23 +32,37 @@ const Navbar = () => {
       </form>
       <ul className="flex">
         <li className="relative">
-          <ButtonDropdown icon={<HiOutlineMail />} />
+          <IconButtonDropdown icon={<HiOutlineMail />} />
         </li>
         <li className="relative">
-          <ButtonDropdown icon={<HiOutlineBell />} />
+          <IconButtonDropdown icon={<HiOutlineBell />} />
         </li>
         <li className="relative px-4">
-          <button className="inline-flex h-full items-center font-semibold text-white">
-            <Image
-              src={profile}
-              alt="Profile"
-              width={28}
-              height={28}
-              className="h-[28px] w-[28px] overflow-hidden rounded-full"
-            />
-            <p className="ml-3 mr-1 hidden lg:inline-block">Hi, Admin</p>
-            <HiChevronDown />
-          </button>
+          <ButtonDropdown
+            trigger={
+              <button className="inline-flex h-full items-center font-semibold text-white focus-visible:outline-none">
+                <Image
+                  src={profile}
+                  alt="Profile"
+                  width={28}
+                  height={28}
+                  className="h-[28px] w-[28px] overflow-hidden rounded-full"
+                />
+                <p className="ml-3 mr-1 hidden lg:inline-block">Hi, Admin</p>
+                <HiChevronDown />
+              </button>
+            }
+          >
+            <ButtonDropdownItem>
+              <p>link</p>
+            </ButtonDropdownItem>
+            <ButtonDropdownItem>
+              <p>link</p>
+            </ButtonDropdownItem>
+            <ButtonDropdownItem>
+              <p>link</p>
+            </ButtonDropdownItem>
+          </ButtonDropdown>
         </li>
       </ul>
     </nav>

@@ -1,15 +1,96 @@
+import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
+
 interface ButtonDropdownProps {
-  icon: React.ReactNode
+  children: React.ReactNode
+  trigger: React.ReactNode
+  align?: 'start' | 'center' | 'end'
+  sideOffset?: number
 }
 
 const ButtonDropdown = (props: ButtonDropdownProps) => {
-  const { icon } = props
+  const { children, trigger, align = 'center', sideOffset = 5 } = props
 
   return (
-    <button className="relative h-full px-4 text-xl text-white transition hover:text-gray-300">
-      {icon}
-      <span className="absolute top-0.5 right-2 h-[7px] w-[7px] animate-pulse rounded-full bg-yellow-300 opacity-100"></span>
-    </button>
+    <DropdownMenu.Root>
+      <DropdownMenu.Trigger asChild>{trigger}</DropdownMenu.Trigger>
+
+      <DropdownMenu.Portal>
+        <DropdownMenu.Content
+          className="DropdownMenuContent min-w-[220px] rounded-md bg-white p-1 shadow-md"
+          sideOffset={sideOffset}
+          align={align}
+        >
+          {children}
+
+          <DropdownMenu.Arrow className="fill-white" />
+        </DropdownMenu.Content>
+      </DropdownMenu.Portal>
+
+      <style jsx>{`
+        .DropdownMenuContent {
+          animation-duration: 400ms;
+          animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+          will-change: transform, opacity;
+        }
+
+        .DropdownMenuContent[data-side='top'] {
+          animation-name: slideDownAndFade;
+        }
+        .DropdownMenuContent[data-side='right'] {
+          animation-name: slideLeftAndFade;
+        }
+        .DropdownMenuContent[data-side='bottom'] {
+          animation-name: slideUpAndFade;
+        }
+        .DropdownMenuContent[data-side='left'] {
+          animation-name: slideRightAndFade;
+        }
+
+        @keyframes slideUpAndFade {
+          from {
+            opacity: 0;
+            transform: translateY(2px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes slideRightAndFade {
+          from {
+            opacity: 0;
+            transform: translateX(-2px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+
+        @keyframes slideDownAndFade {
+          from {
+            opacity: 0;
+            transform: translateY(-2px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes slideLeftAndFade {
+          from {
+            opacity: 0;
+            transform: translateX(2px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+      `}</style>
+    </DropdownMenu.Root>
   )
 }
 
