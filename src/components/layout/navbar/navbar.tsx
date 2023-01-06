@@ -1,10 +1,12 @@
 'use client'
-import { HiOutlineBell, HiOutlineMail } from 'react-icons/hi'
+import Image from 'next/image'
+import { HiChevronDown, HiOutlineBell, HiOutlineMail } from 'react-icons/hi'
 
 import { useLayoutContext } from '~/contexts/layout-context'
 import clsxm from '~/utils/clsxm'
 
 import ButtonDropdown from './button-dropdown'
+import profile from './profile.png'
 import SearchBar from './search-bar'
 import SidebarToggle from './sidebar-toggle'
 
@@ -33,7 +35,19 @@ const Navbar = () => {
         <li className="relative">
           <ButtonDropdown icon={<HiOutlineBell />} />
         </li>
-        <li></li>
+        <li className="relative px-4">
+          <button className="inline-flex h-full items-center font-semibold text-white">
+            <Image
+              src={profile}
+              alt="Profile"
+              width={28}
+              height={28}
+              className="h-[28px] w-[28px] overflow-hidden rounded-full"
+            />
+            <p className="ml-3 mr-1 hidden lg:inline-block">Hi, Admin</p>
+            <HiChevronDown />
+          </button>
+        </li>
       </ul>
     </nav>
   )
