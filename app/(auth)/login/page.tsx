@@ -1,5 +1,7 @@
+'use client'
 import Head from 'next/head'
 import Image from 'next/image'
+import { FormEvent, useState } from 'react'
 import { FaFacebook, FaTwitter } from 'react-icons/fa'
 import Logo from 'src/assets/images/logo.png'
 
@@ -7,6 +9,13 @@ import Label from '~/components/form/label'
 import TextInput from '~/components/form/text-input'
 
 const LoginPage = () => {
+  const [isSubmit, setIsSubmit] = useState(false)
+
+  const onSubmit = (e: FormEvent) => {
+    e.preventDefault()
+    setIsSubmit(true)
+  }
+
   return (
     <div>
       <Head>
@@ -18,7 +27,13 @@ const LoginPage = () => {
           <Image src={Logo} alt="logo site" width={75} height={75} />
         </div>
 
-        <form className="bg-w h-min w-[22%] rounded border-t-2 border-t-c-purple bg-white shadow-sm">
+        <form
+          className={`bg-w group h-min w-[22%] rounded border-t-2 border-t-c-purple bg-white shadow-sm ${
+            isSubmit ? 'useValidation' : ''
+          }`}
+          onSubmit={e => onSubmit(e)}
+          noValidate
+        >
           <h1 className="text-md text-gray px-6 py-8 font-bold text-gray-500">Login</h1>
 
           <hr className="border-c-white" />
@@ -26,17 +41,33 @@ const LoginPage = () => {
           <div className="mt-6 px-6 pb-6">
             <div>
               <Label htmlFor="email">Email</Label>
-              <TextInput type="email" id="email" required={true} />
+              <TextInput
+                type="email"
+                id="email"
+                className="peer group-[&.useValidation]:invalid:border-pink-600"
+                required={true}
+              />
+              <p className="invisible mt-2 text-xs text-pink-600 group-[&.useValidation]:peer-invalid:visible">
+                Please enter your email
+              </p>
             </div>
 
-            <div className="mt-8">
+            <div className="mt-8 ">
               <div className="flex items-center justify-between">
                 <Label htmlFor="password">Password</Label>
                 <a href="#" className="text-xs text-c-purple">
                   Forgot Password?
                 </a>
               </div>
-              <TextInput type="password" id="password" required={true} />
+              <TextInput
+                type="password"
+                id="password"
+                className="peer group-[&.useValidation]:invalid:border-pink-600"
+                required={true}
+              />
+              <p className="invisible mt-2 text-xs text-pink-600 group-[&.useValidation]:peer-invalid:visible">
+                Please enter your password
+              </p>
             </div>
 
             <div className="mt-8 flex items-center">
