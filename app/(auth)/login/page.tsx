@@ -3,7 +3,8 @@ import Image from 'next/image'
 import { FaFacebook, FaTwitter } from 'react-icons/fa'
 import Logo from 'src/assets/images/logo.png'
 
-import TextInput from '~/components/input/text-input'
+import Label from '~/components/form/label'
+import TextInput from '~/components/form/text-input'
 
 const LoginPage = () => {
   return (
@@ -24,17 +25,13 @@ const LoginPage = () => {
 
           <div className="mt-6 px-6 pb-6">
             <div>
-              <label htmlFor="email" className="text-xs text-c-black">
-                Email
-              </label>
+              <Label htmlFor="email">Email</Label>
               <TextInput type="email" id="email" required={true} />
             </div>
 
             <div className="mt-8">
               <div className="flex items-center justify-between">
-                <label htmlFor="password" className="text-xs text-c-black">
-                  Password
-                </label>
+                <Label htmlFor="password">Password</Label>
                 <a href="#" className="text-xs text-c-purple">
                   Forgot Password?
                 </a>
@@ -54,7 +51,10 @@ const LoginPage = () => {
               </label>
             </div>
 
-            <button type="submit" className="mt-6 w-full rounded-[4px] bg-c-purple py-3 text-sm text-white">
+            <button
+              type="submit"
+              className="mt-6 w-full rounded-[4px] bg-c-purple py-3 text-sm text-white shadow-md shadow-c-light-purple-2 transition duration-300 hover:bg-[#394eea]"
+            >
               Login
             </button>
 
