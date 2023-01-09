@@ -5,10 +5,11 @@ interface ButtonDropdownProps {
   trigger: React.ReactNode
   align?: 'start' | 'center' | 'end'
   sideOffset?: number
+  withArrow?: boolean
 }
 
 const ButtonDropdown = (props: ButtonDropdownProps) => {
-  const { children, trigger, align = 'center', sideOffset = 5 } = props
+  const { children, trigger, align = 'center', sideOffset = 5, withArrow = true } = props
 
   return (
     <DropdownMenu.Root>
@@ -22,7 +23,7 @@ const ButtonDropdown = (props: ButtonDropdownProps) => {
         >
           {children}
 
-          <DropdownMenu.Arrow className="fill-white" />
+          {withArrow ? <DropdownMenu.Arrow className="fill-white" /> : null}
         </DropdownMenu.Content>
       </DropdownMenu.Portal>
 

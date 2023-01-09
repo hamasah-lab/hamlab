@@ -1,6 +1,15 @@
 'use client'
 import Image from 'next/image'
-import { HiChevronDown, HiOutlineBell, HiOutlineMail } from 'react-icons/hi'
+import Link from 'next/link'
+import {
+  HiArrowRightOnRectangle,
+  HiChevronDown,
+  HiOutlineBell,
+  HiOutlineBolt,
+  HiOutlineEnvelope,
+  HiOutlineUser,
+  HiOutlineWrench,
+} from 'react-icons/hi2'
 
 import { useLayoutContext } from '~/contexts/layout-context'
 import clsxm from '~/utils/clsxm'
@@ -32,13 +41,14 @@ const Navbar = () => {
       </form>
       <ul className="flex">
         <li className="relative">
-          <IconButtonDropdown icon={<HiOutlineMail />} />
+          <IconButtonDropdown icon={<HiOutlineEnvelope />} />
         </li>
         <li className="relative">
           <IconButtonDropdown icon={<HiOutlineBell />} />
         </li>
         <li className="relative px-4">
           <ButtonDropdown
+            withArrow={false}
             trigger={
               <button className="inline-flex h-full items-center font-semibold text-white focus-visible:outline-none">
                 <Image
@@ -53,14 +63,39 @@ const Navbar = () => {
               </button>
             }
           >
+            <p className="p-4 text-[10px] font-semibold uppercase leading-none tracking-wide">Logged in 5 mins ago</p>
             <ButtonDropdownItem>
-              <p>link</p>
+              <Link
+                href="/"
+                className="inline-flex w-full appearance-none items-center gap-2 text-base font-light tracking-wide"
+              >
+                <HiOutlineUser />
+                <span>Profile</span>
+              </Link>
             </ButtonDropdownItem>
             <ButtonDropdownItem>
-              <p>link</p>
+              <Link
+                href="/"
+                className="inline-flex w-full appearance-none items-center gap-2 text-base font-light tracking-wide"
+              >
+                <HiOutlineBolt />
+                <span>Activities</span>
+              </Link>
             </ButtonDropdownItem>
             <ButtonDropdownItem>
-              <p>link</p>
+              <Link
+                href="/"
+                className="inline-flex w-full appearance-none items-center gap-2 text-base font-light tracking-wide"
+              >
+                <HiOutlineWrench />
+                <span>Settings</span>
+              </Link>
+            </ButtonDropdownItem>
+            <ButtonDropdownItem className="hover:bg-red-200">
+              <button className="inline-flex w-full appearance-none items-center gap-2 text-base font-semibold tracking-wide text-red-600">
+                <HiArrowRightOnRectangle />
+                <span>Logout</span>
+              </button>
             </ButtonDropdownItem>
           </ButtonDropdown>
         </li>

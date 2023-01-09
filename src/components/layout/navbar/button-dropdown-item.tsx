@@ -1,14 +1,22 @@
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
 
+import clsxm from '~/utils/clsxm'
+
 interface ButtonDropdownItemProps {
   children: React.ReactNode
+  className?: string
 }
 
 const ButtonDropdownItem = (props: ButtonDropdownItemProps) => {
-  const { children } = props
+  const { children, className } = props
 
   return (
-    <DropdownMenu.Item className="DropdownMenuItem relative flex h-6 select-none items-center rounded pl-6 text-sm leading-none text-violet-800 outline-none transition hover:bg-violet-500 hover:text-violet-100">
+    <DropdownMenu.Item
+      className={clsxm(
+        'relative flex w-full select-none items-center rounded py-2 pl-6 leading-none outline-none transition hover:bg-gray-200',
+        className
+      )}
+    >
       {children}
     </DropdownMenu.Item>
   )
