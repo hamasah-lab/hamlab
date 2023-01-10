@@ -22,12 +22,11 @@ const ButtonDropdown = (props: ButtonDropdownProps) => {
           align={align}
         >
           {children}
-
           {withArrow ? <DropdownMenu.Arrow className="fill-white" /> : null}
         </DropdownMenu.Content>
       </DropdownMenu.Portal>
 
-      <style jsx>{`
+      <style jsx global>{`
         .DropdownMenuContent {
           animation-duration: 400ms;
           animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
