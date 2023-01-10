@@ -17,6 +17,7 @@ import clsxm from '~/utils/clsxm'
 import ButtonDropdown from './button-dropdown'
 import ButtonDropdownItem from './button-dropdown-item'
 import IconButtonDropdown from './icon-button-dropdown'
+import MenuDropdown from './menu-dropdown'
 import profile from './profile.png'
 import SearchBar from './search-bar'
 import SidebarToggle from './sidebar-toggle'
@@ -44,7 +45,7 @@ const Navbar = () => {
           <IconButtonDropdown icon={<HiOutlineEnvelope />} />
         </li>
         <li className="relative">
-          <IconButtonDropdown icon={<HiOutlineBell />} />
+          <MenuDropdown />
         </li>
         <li className="relative px-4">
           <ButtonDropdown
