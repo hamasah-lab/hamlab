@@ -1,23 +1,15 @@
 'use client'
 import Image from 'next/image'
 import Link from 'next/link'
-import {
-  HiArrowRightOnRectangle,
-  HiChevronDown,
-  HiOutlineBell,
-  HiOutlineBolt,
-  HiOutlineEnvelope,
-  HiOutlineUser,
-  HiOutlineWrench,
-} from 'react-icons/hi2'
+import { HiArrowRightOnRectangle, HiChevronDown, HiOutlineBolt, HiOutlineUser, HiOutlineWrench } from 'react-icons/hi2'
 
 import { useLayoutContext } from '~/contexts/layout-context'
 import clsxm from '~/utils/clsxm'
 
 import ButtonDropdown from './button-dropdown'
 import ButtonDropdownItem from './button-dropdown-item'
-import IconButtonDropdown from './icon-button-dropdown'
-import MenuDropdown from './menu-dropdown'
+import MessagesMenu from './messages-menu'
+import NotificationsMenu from './notifications-menu'
 import profile from './profile.png'
 import SearchBar from './search-bar'
 import SidebarToggle from './sidebar-toggle'
@@ -42,10 +34,10 @@ const Navbar = () => {
       </form>
       <ul className="flex">
         <li className="relative">
-          <MenuDropdown trigger={<IconButtonDropdown icon={<HiOutlineEnvelope />} />} title="Messages" />
+          <MessagesMenu />
         </li>
         <li className="relative">
-          <MenuDropdown trigger={<IconButtonDropdown icon={<HiOutlineBell />} />} title="Notifications" />
+          <NotificationsMenu />
         </li>
         <li className="relative px-4">
           <ButtonDropdown
