@@ -17,14 +17,14 @@ const LoginPage = () => {
   }
 
   return (
-    <div className="bg-c-white-broken flex min-h-screen w-screen flex-col items-center justify-center">
+    <div className="flex min-h-screen w-screen flex-col items-center justify-center bg-custom-white-broken">
       <div className="mt-8 mb-9 flex items-center justify-center overflow-hidden rounded-full bg-white p-3 shadow-md">
         <Image src={Logo} alt="logo site" width={75} height={75} />
       </div>
 
       <form
         className={clsxm(
-          'bg-w border-t-c-purple group h-min w-[22%] rounded border-t-2 bg-white shadow-sm',
+          'bg-w group h-min w-[22%] rounded border-t-2 border-t-custom-purple bg-white shadow-sm',
           isSubmit ? 'useValidation' : ''
         )}
         onSubmit={e => onSubmit(e)}
@@ -32,7 +32,7 @@ const LoginPage = () => {
       >
         <h1 className="text-md text-gray px-6 py-8 font-bold text-gray-500">Login</h1>
 
-        <hr className="border-c-white" />
+        <hr className="border-custom-white" />
 
         <div className="mt-6 px-6 pb-6">
           <div>
@@ -51,7 +51,7 @@ const LoginPage = () => {
           <div className="mt-8 ">
             <div className="flex items-center justify-between">
               <Label htmlFor="password">Password</Label>
-              <a href="#" className="text-c-purple text-xs">
+              <a href="#" className="text-xs text-custom-purple">
                 Forgot Password?
               </a>
             </div>
@@ -71,7 +71,7 @@ const LoginPage = () => {
               id="remmember"
               type="checkbox"
               value=""
-              className="!accent-c-purple hover:accent-c-purple mr-2 scale-110 cursor-pointer border-gray-100 p-96"
+              className="mr-2 scale-110 cursor-pointer border-gray-100 p-96 !accent-custom-purple hover:accent-custom-purple"
             />
             <label htmlFor="remmember" className="text-sm font-normal text-gray-500">
               Remember Me
@@ -80,7 +80,7 @@ const LoginPage = () => {
 
           <button
             type="submit"
-            className="bg-c-purple shadow-c-light-purple-2 mt-6 w-full rounded-[4px] py-3 text-sm text-white shadow-md transition duration-300 hover:bg-[#394eea]"
+            className="mt-6 w-full rounded-[4px] bg-custom-purple py-3 text-sm text-white shadow-md shadow-custom-light-purple-2 transition duration-300 hover:bg-[#394eea]"
           >
             Login
           </button>
@@ -102,7 +102,7 @@ const LoginPage = () => {
 
       <p className="mt-12 text-sm text-gray-400">
         Don&apos;t have an account?&nbsp;
-        <a href="#" className=" text-c-purple">
+        <a href="#" className="text-custom-purple">
           Create One
         </a>
       </p>
