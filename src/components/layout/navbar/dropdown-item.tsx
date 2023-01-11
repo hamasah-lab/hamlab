@@ -2,12 +2,12 @@ import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
 
 import clsxm from '~/utils/clsxm'
 
-interface ButtonDropdownItemProps {
+interface DropdownItemProps {
   children: React.ReactNode
   className?: string
 }
 
-const ButtonDropdownItem = (props: ButtonDropdownItemProps) => {
+const DropdownItem = (props: DropdownItemProps) => {
   const { children, className } = props
 
   return (
@@ -22,4 +22,4 @@ const ButtonDropdownItem = (props: ButtonDropdownItemProps) => {
   )
 }
 
-export default ButtonDropdownItem
+export default DropdownItem

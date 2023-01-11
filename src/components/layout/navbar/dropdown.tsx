@@ -1,6 +1,6 @@
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
 
-interface ButtonDropdownProps {
+interface DropdownProps {
   children: React.ReactNode
   trigger: React.ReactNode
   align?: 'start' | 'center' | 'end'
@@ -8,7 +8,7 @@ interface ButtonDropdownProps {
   withArrow?: boolean
 }
 
-const ButtonDropdown = (props: ButtonDropdownProps) => {
+const Dropdown = (props: DropdownProps) => {
   const { children, trigger, align = 'center', sideOffset = 5, withArrow = true } = props
 
   return (
@@ -94,4 +94,4 @@ const ButtonDropdown = (props: ButtonDropdownProps) => {
   )
 }
 
-export default ButtonDropdown
+export default Dropdown

@@ -6,8 +6,8 @@ import { HiArrowRightOnRectangle, HiChevronDown, HiOutlineBolt, HiOutlineUser, H
 import { useLayoutContext } from '~/contexts/layout-context'
 import clsxm from '~/utils/clsxm'
 
-import ButtonDropdown from './button-dropdown'
-import ButtonDropdownItem from './button-dropdown-item'
+import Dropdown from './dropdown'
+import DropdownItem from './dropdown-item'
 import MessagesMenu from './messages-menu'
 import NotificationsMenu from './notifications-menu'
 import profile from './profile.png'
@@ -40,7 +40,7 @@ const Navbar = () => {
           <NotificationsMenu />
         </li>
         <li className="relative px-4">
-          <ButtonDropdown
+          <Dropdown
             withArrow={false}
             trigger={
               <button className="inline-flex h-full items-center font-semibold text-white focus-visible:outline-none">
@@ -57,7 +57,7 @@ const Navbar = () => {
             }
           >
             <p className="p-4 text-[10px] font-semibold uppercase leading-none tracking-wide">Logged in 5 mins ago</p>
-            <ButtonDropdownItem>
+            <DropdownItem>
               <Link
                 href="/"
                 className="inline-flex w-full appearance-none items-center gap-2 text-base font-light tracking-wide"
@@ -65,8 +65,8 @@ const Navbar = () => {
                 <HiOutlineUser />
                 <span>Profile</span>
               </Link>
-            </ButtonDropdownItem>
-            <ButtonDropdownItem>
+            </DropdownItem>
+            <DropdownItem>
               <Link
                 href="/"
                 className="inline-flex w-full appearance-none items-center gap-2 text-base font-light tracking-wide"
@@ -74,8 +74,8 @@ const Navbar = () => {
                 <HiOutlineBolt />
                 <span>Activities</span>
               </Link>
-            </ButtonDropdownItem>
-            <ButtonDropdownItem>
+            </DropdownItem>
+            <DropdownItem>
               <Link
                 href="/"
                 className="inline-flex w-full appearance-none items-center gap-2 text-base font-light tracking-wide"
@@ -83,14 +83,14 @@ const Navbar = () => {
                 <HiOutlineWrench />
                 <span>Settings</span>
               </Link>
-            </ButtonDropdownItem>
-            <ButtonDropdownItem className="hover:bg-red-200">
+            </DropdownItem>
+            <DropdownItem className="hover:bg-red-200">
               <button className="inline-flex w-full appearance-none items-center gap-2 text-base font-semibold tracking-wide text-red-600">
                 <HiArrowRightOnRectangle />
                 <span>Logout</span>
               </button>
-            </ButtonDropdownItem>
-          </ButtonDropdown>
+            </DropdownItem>
+          </Dropdown>
         </li>
       </ul>
     </nav>

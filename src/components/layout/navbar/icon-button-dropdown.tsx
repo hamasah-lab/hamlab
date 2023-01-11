@@ -1,10 +1,10 @@
 import { forwardRef } from 'react'
 
-interface ButtonDropdownProps {
+interface DropdownProps {
   icon: React.ReactNode
 }
 
-const IconButtonDropdown = forwardRef((props: ButtonDropdownProps, ref: any) => {
+const IconDropdown = forwardRef((props: DropdownProps, ref: any) => {
   const { icon } = props
 
   return (
@@ -19,6 +19,6 @@ const IconButtonDropdown = forwardRef((props: ButtonDropdownProps, ref: any) => 
   )
 })
 
-IconButtonDropdown.displayName = 'IconButtonDropdown'
+IconDropdown.displayName = 'IconDropdown'
 
-export default IconButtonDropdown
+export default IconDropdown
