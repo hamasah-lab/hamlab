@@ -42,10 +42,10 @@ const Navbar = () => {
       </form>
       <ul className="flex">
         <li className="relative">
-          <IconButtonDropdown icon={<HiOutlineEnvelope />} />
+          <MenuDropdown trigger={<IconButtonDropdown icon={<HiOutlineEnvelope />} />} title="Messages" />
         </li>
         <li className="relative">
-          <MenuDropdown />
+          <MenuDropdown trigger={<IconButtonDropdown icon={<HiOutlineBell />} />} title="Notifications" />
         </li>
         <li className="relative px-4">
           <ButtonDropdown

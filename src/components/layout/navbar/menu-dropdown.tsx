@@ -1,15 +1,21 @@
 import Link from 'next/link'
-import { HiChevronRight, HiCodeBracket, HiOutlineBell } from 'react-icons/hi2'
+import { HiChevronRight, HiCodeBracket } from 'react-icons/hi2'
 
 import ButtonDropdown from './button-dropdown'
 import ButtonDropdownItem from './button-dropdown-item'
-import IconButtonDropdown from './icon-button-dropdown'
 
-const MenuDropdown = () => {
+interface MenuDropdownProps {
+  title: string
+  trigger: React.ReactNode
+}
+
+const MenuDropdown = (props: MenuDropdownProps) => {
+  const { title, trigger } = props
+
   return (
-    <ButtonDropdown withArrow={false} trigger={<IconButtonDropdown icon={<HiOutlineBell />} />} align="end">
+    <ButtonDropdown withArrow={false} trigger={trigger} align="end">
       <div className="flex w-[350px] items-center justify-between p-4 text-sm font-semibold tracking-wide">
-        <span className="text-gray-500">Notifications</span>
+        <span className="text-gray-500">{title}</span>
         <button className="rounded border border-blue-200 p-1 text-xs text-blue-800 outline-none transition hover:bg-blue-200 hover:text-blue-600 focus:bg-blue-200 focus:text-blue-600 focus-visible:ring">
           Mark All As Read
         </button>
