@@ -1,12 +1,12 @@
 'use client'
-import * as React from 'react'
+import React, { createContext, useContext, useState } from 'react'
 
 interface LayoutContext {
   isSidebarOpen: boolean
   sidebarOpenToggle: () => void
 }
 
-const LayoutContext = React.createContext<LayoutContext | undefined>(undefined)
+const LayoutContext = createContext<LayoutContext | undefined>(undefined)
 
 const LayoutContextProvider = ({ children }: { children: React.ReactNode }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)

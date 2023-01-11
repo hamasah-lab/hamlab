@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import React from 'react'
 import { HiChevronRight } from 'react-icons/hi2'
 
 import Dropdown from './dropdown'

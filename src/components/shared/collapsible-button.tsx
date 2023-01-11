@@ -1,6 +1,6 @@
 import * as Collapsible from '@radix-ui/react-collapsible'
 import { ClassValue } from 'clsx'
-import { useState } from 'react'
+import React, { useState } from 'react'
 
 import clsxm from '~/utils/clsxm'
 
