@@ -9,7 +9,7 @@ interface LayoutContext {
 const LayoutContext = React.createContext<LayoutContext | undefined>(undefined)
 
 const LayoutContextProvider = ({ children }: { children: React.ReactNode }) => {
-  const [isSidebarOpen, setIsSidebarOpen] = React.useState(false)
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
 
   const sidebarOpenToggle = (): void => {
     setIsSidebarOpen(prev => !prev)
@@ -19,7 +19,7 @@ const LayoutContextProvider = ({ children }: { children: React.ReactNode }) => {
 }
 
 export const useLayoutContext = (): LayoutContext => {
-  const context = React.useContext(LayoutContext)
+  const context = useContext(LayoutContext)
 
   if (!context) {
     throw new Error('useLayoutContext must be used within a LayoutContextProvider')
