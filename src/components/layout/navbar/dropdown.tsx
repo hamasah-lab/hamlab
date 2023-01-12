@@ -16,16 +16,14 @@ const Dropdown = (props: DropdownProps) => {
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>{trigger}</DropdownMenu.Trigger>
 
-      <DropdownMenu.Portal>
-        <DropdownMenu.Content
-          className="DropdownMenuContent min-w-[220px] rounded-md bg-white p-1 shadow-md"
-          sideOffset={sideOffset}
-          align={align}
-        >
-          {children}
-          {withArrow ? <DropdownMenu.Arrow className="fill-white" /> : null}
-        </DropdownMenu.Content>
-      </DropdownMenu.Portal>
+      <DropdownMenu.Content
+        className="DropdownMenuContent min-w-[220px] rounded-md bg-white p-1 shadow-md"
+        sideOffset={sideOffset}
+        align={align}
+      >
+        {children}
+        {withArrow ? <DropdownMenu.Arrow className="fill-white" /> : null}
+      </DropdownMenu.Content>
 
       <style jsx global>{`
         .DropdownMenuContent {
