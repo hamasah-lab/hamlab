@@ -17,7 +17,7 @@ const MainContent = ({ children }: { children: React.ReactNode }) => {
       )}
     >
       <section className="relative z-[1]">
-        <SectionHeader />
+        <SectionHeader title="Dashboard" />
         {children}
       </section>
     </main>
