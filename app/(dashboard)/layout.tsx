@@ -1,5 +1,6 @@
 import React from 'react'
 
+import Footer from '~/components/layout/footer'
 import MainContent from '~/components/layout/main'
 import { Navbar } from '~/components/layout/navbar'
 import Sidebar from '~/components/layout/sidebar'
@@ -12,6 +13,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
         <Navbar />
         <Sidebar />
         <MainContent>{children}</MainContent>
+        <Footer />
       </LayoutContextProvider>
     </>
   )
