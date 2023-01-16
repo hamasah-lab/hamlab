@@ -13,7 +13,7 @@ const CheckboxInput = ({ name, id, className }: PropsCheckboxInput) => (
     <input type="checkbox" id={id} name={name} className="peer hidden" />
     <div
       className={clsxm(
-        'flex h-4 w-4 items-center justify-center rounded bg-gray-300 p-px text-white transition duration-200 ease-in-out peer-checked:bg-custom-purple',
+        'flex h-4 w-4 items-center justify-center rounded bg-gray-200 p-px text-white transition duration-200 ease-in-out peer-checked:bg-custom-purple',
         className ?? ''
       )}
     >
