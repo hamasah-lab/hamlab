@@ -15,7 +15,7 @@ const MenuDropdown = (props: MenuDropdownProps) => {
   const { title, trigger, children, viewAll = '/' } = props
 
   return (
-    <Dropdown withArrow={false} trigger={trigger} align="end">
+    <Dropdown trigger={trigger}>
       <div className="flex w-[350px] items-center justify-between p-4 text-sm font-semibold tracking-wide">
         <span className="text-gray-500">{title}</span>
         <button className="rounded border border-blue-200 p-1 text-xs text-blue-800 outline-none transition hover:bg-blue-200 hover:text-blue-600 focus:bg-blue-200 focus:text-blue-600 focus-visible:ring">

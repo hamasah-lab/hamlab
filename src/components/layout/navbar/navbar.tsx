@@ -41,7 +41,6 @@ const Navbar = () => {
         </li>
         <li className="relative px-4">
           <Dropdown
-            withArrow={false}
             trigger={
               <button className="inline-flex h-full items-center font-semibold text-white focus-visible:outline-none">
                 <Image
