@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { FormEvent, useState } from 'react'
 
 import Logo from '~/assets/images/logo.png'
+import CheckboxInput from '~/components/ui/form/checkbox'
 import Label from '~/components/ui/form/label'
 import SelectInput from '~/components/ui/form/select'
 import { DataSelect } from '~/components/ui/form/select/types'
@@ -175,13 +176,8 @@ const RegisterPage = () => {
           </div>
 
           <div className="mx-6 mt-6 flex items-center">
-            <input
-              id="remmember"
-              type="checkbox"
-              value=""
-              className="mr-2 scale-110 cursor-pointer border-gray-100 p-96 !accent-custom-purple hover:accent-custom-purple"
-            />
-            <label htmlFor="remmember" className="text-sm font-normal text-gray-500">
+            <CheckboxInput id="remmember" />
+            <label htmlFor="remmember" className="ml-2 text-sm font-normal text-gray-500 ">
               I agree with the terms and conditions
             </label>
           </div>
