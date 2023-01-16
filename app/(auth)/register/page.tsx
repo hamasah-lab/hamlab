@@ -5,7 +5,8 @@ import { FormEvent, useState } from 'react'
 
 import Logo from '~/assets/images/logo.png'
 import Label from '~/components/ui/form/label'
-import SelectInput, { SelectItem } from '~/components/ui/form/select'
+import SelectInput from '~/components/ui/form/select'
+import { DataSelect } from '~/components/ui/form/select/types'
 import TextInput from '~/components/ui/form/text-input'
 import TextAreaInput from '~/components/ui/form/textarea'
 import countries from '~/data/countries.json'
@@ -13,7 +14,8 @@ import clsxm from '~/utils/clsxm'
 
 const RegisterPage = () => {
   const [isSubmit, setIsSubmit] = useState(false)
-  const [country, setCountry] = useState<string>()
+  const [country, setCountry] = useState<DataSelect | undefined>()
+  // const [country, setCountry] = useState<string>()
 
   const onSubmit = (e: FormEvent) => {
     e.preventDefault()
@@ -122,19 +124,13 @@ const RegisterPage = () => {
             <div className="basis-1/2 pl-6">
               <Label htmlFor="country">Country</Label>
               <SelectInput
+                placeholder="Chose Country"
                 id="country"
-                placeholder="Select Country"
-                required={true}
-                className={clsxm(!country && isSubmit ? 'border-pink-600' : '')}
-                onValueChange={value => setCountry(value)}
-              >
-                {countries.map((country, index) => (
-                  <SelectItem value={country.name} key={index}>
-                    {country.name}
-                  </SelectItem>
-                ))}
-              </SelectInput>
-              <p className={clsxm('mt-2 text-xs text-pink-600', !country && isSubmit ? 'visible' : 'invisible')}>
+                onChange={value => setCountry(value)}
+                data={countries.map(country => ({ value: country.name.toLowerCase(), text: country.name }))}
+                className={clsxm(isSubmit && !country ? '!border-pink-600' : '')}
+              />
+              <p className={clsxm('mt-2 text-xs text-pink-600', isSubmit && !country ? '' : 'invisible')}>
                 Please enter your country
               </p>
             </div>

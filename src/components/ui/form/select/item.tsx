@@ -1,45 +1,28 @@
-import * as Select from '@radix-ui/react-select'
-import { forwardRef } from 'react'
-import { BsCheck } from 'react-icons/bs'
+import { Listbox } from '@headlessui/react'
+import { PropsWithChildren } from 'react'
 
 import clsxm from '~/utils/clsxm'
 
-const Item = forwardRef<HTMLDivElement, React.ComponentProps<typeof Select.Item>>(
-  ({ className, children, ...props }, forwardedRef) => {
-    const classNameItem = clsxm(
-      `
-            text-sm 
-            text-custom-black 
-            rounded-sm 
-            cursor-pointer 
-            flex 
-            items-center 
-            h-6 
-            py-5 
-            px-6 
-            relative 
-            select-none 
-            data-[disabled]:text-custom-white-purple-2 
-            data-[disabled]:pointer-events-none 
-            data-[highlighted]:outline-none 
-            data-[highlighted]:bg-custom-light-gray-2
-            data-[state=checked]:bg-custom-light-purple
-            data-[state=checked]:text-white
-        `,
-      className
-    )
+import { PropSelectItem } from './types'
 
-    return (
-      <Select.Item className={classNameItem} {...props} ref={forwardedRef}>
-        <Select.ItemText>{children}</Select.ItemText>
-        <Select.ItemIndicator className="absolute left-0 inline-flex w-6 items-center justify-center">
-          <BsCheck />
-        </Select.ItemIndicator>
-      </Select.Item>
-    )
-  }
+const SelectItem = ({ value, children, iconCheck, className }: PropSelectItem & PropsWithChildren) => (
+  <Listbox.Option
+    className={({ active, selected }) =>
+      clsxm(
+        'relative cursor-pointer select-none py-2 pl-5 pr-4',
+        className ?? '',
+        selected ? 'bg-custom-purple text-custom-white' : active ? 'bg-custom-light-gray-2' : 'text-custom-black'
+      )
+    }
+    value={value}
+  >
+    {({ selected }) => (
+      <div className="flex w-full items-center justify-start gap-2">
+        <div className={clsxm(selected ? '' : 'invisible')}>{iconCheck}</div>
+        <span className={clsxm('block truncate', selected ? 'font-medium' : 'font-normal')}>{children}</span>
+      </div>
+    )}
+  </Listbox.Option>
 )
 
-Item.displayName = 'Item'
-
-export default Item
+export default SelectItem

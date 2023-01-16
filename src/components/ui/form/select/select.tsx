@@ -1,60 +1,59 @@
-import * as Select from '@radix-ui/react-select'
-import React from 'react'
-import { BsChevronDown, BsChevronUp } from 'react-icons/bs'
+import { Listbox, Transition } from '@headlessui/react'
+import React, { Fragment, useState } from 'react'
+import { BsCheck } from 'react-icons/bs'
+import { HiChevronUpDown } from 'react-icons/hi2'
 
 import clsxm from '~/utils/clsxm'
 
-interface propsSelect {
-  children: React.ReactNode
-  icon?: React.ReactNode
-  required?: boolean
-  disabled?: boolean
-  value?: string
-  onOpenChange?(open: boolean): void
-  onValueChange?(value: string): void
-}
+import SelectItem from './item'
+import { DataSelect, PropSelectInput } from './types'
 
 const SelectInput = ({
-  children,
+  data,
+  iconCheck = <BsCheck className="h-5 w-5 text-custom-white" />,
+  item = (data, iconCheck) => (
+    <SelectItem value={data} iconCheck={iconCheck}>
+      {data.text}
+    </SelectItem>
+  ),
+  placeholder = 'Chose Fruit',
+  id,
+  name,
   className,
-  placeholder,
-  icon,
-  required,
-  disabled,
-  value,
-  onOpenChange,
-  onValueChange,
-  ...props
-}: propsSelect & React.ComponentProps<typeof Select.Trigger>) => (
-  <Select.Root
-    onOpenChange={onOpenChange}
-    onValueChange={onValueChange}
-    disabled={disabled}
-    value={value}
-    required={required}
-  >
-    <Select.Trigger
-      className={clsxm(
-        'mt-2 flex h-[42px] w-full items-center justify-between gap-1 rounded border border-custom-white-purple-2 bg-custom-white-purple py-0 px-[15px] text-sm text-custom-black outline-none hover:border-custom-light-purple data-[placeholder]:text-custom-light-gray',
-        className ?? ''
-      )}
-      {...props}
-    >
-      <Select.Value className="" placeholder={placeholder ?? 'Select Something'} />
-      <Select.Icon className="text-custom-black">{icon ?? <BsChevronDown />}</Select.Icon>
-    </Select.Trigger>
-    <Select.Portal>
-      <Select.Content className="overflow-hidden rounded-md bg-white shadow">
-        <Select.ScrollUpButton className="flex h-6 cursor-default items-center justify-center bg-white text-custom-light-purple">
-          <BsChevronUp />
-        </Select.ScrollUpButton>
-        <Select.Viewport className="p-1 ">{children}</Select.Viewport>
-        <Select.ScrollDownButton className="flex h-6 items-center justify-center bg-custom-white text-custom-purple">
-          <BsChevronDown />
-        </Select.ScrollDownButton>
-      </Select.Content>
-    </Select.Portal>
-  </Select.Root>
-)
+  onChange,
+}: PropSelectInput) => {
+  const [selected, setSelected] = useState<DataSelect | undefined>()
+  const onSelectChange = (value: DataSelect) => {
+    setSelected(value)
+    if (onChange) onChange(value)
+  }
+
+  return (
+    <Listbox value={selected} onChange={onSelectChange}>
+      <div className="relative mt-1">
+        <Listbox.Button
+          id={id}
+          name={name}
+          className={clsxm(
+            'relative mt-1 w-full cursor-pointer rounded border border-custom-white-purple-2 bg-custom-white-purple py-2.5 pl-3 pr-10 text-left text-sm outline-none ring-0 hover:border-custom-light-purple',
+            className ?? ''
+          )}
+        >
+          <span className={clsxm('block truncate', selected ? '!text-custom-black' : 'text-gray-400')}>
+            {selected?.text ?? placeholder}
+          </span>
+          <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+            <HiChevronUpDown className="h-5 w-5 text-gray-400" aria-hidden="true" />
+          </span>
+        </Listbox.Button>
+        <Transition as={Fragment} leave="transition ease-in duration-100" leaveFrom="opacity-100" leaveTo="opacity-0">
+          <Listbox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+            {data.map(e => item(e, iconCheck))}
+          </Listbox.Options>
+        </Transition>
+      </div>
+    </Listbox>
+  )
+}
 
 export default SelectInput
