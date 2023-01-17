@@ -13,6 +13,8 @@ module.exports = {
       },
       colors: {
         'custom-black': '#34395e',
+        'custom-light-gray': '#9C9C9C',
+        'custom-light-gray-2': '#F6F6F6',
         'custom-white': '#f9f9f9',
         'custom-white-broken': '#FAFDFB',
         'custom-light-purple': '#95a0f4',
