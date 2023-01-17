@@ -1,5 +1,4 @@
 import { usePathname } from 'next/navigation'
-import { HiChevronDown } from 'react-icons/hi'
 import { HiChevronUp } from 'react-icons/hi2'
 
 import CollapsibleButton from '~/components/shared/collapsible-button'

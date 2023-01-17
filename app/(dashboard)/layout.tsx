@@ -8,14 +8,12 @@ import LayoutContextProvider from '~/contexts/layout-context'
 
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <>
-      <LayoutContextProvider>
-        <Navbar />
-        <Sidebar />
-        <MainContent>{children}</MainContent>
-        <Footer />
-      </LayoutContextProvider>
-    </>
+    <LayoutContextProvider>
+      <Navbar />
+      <Sidebar />
+      <MainContent>{children}</MainContent>
+      <Footer />
+    </LayoutContextProvider>
   )
 }
 
