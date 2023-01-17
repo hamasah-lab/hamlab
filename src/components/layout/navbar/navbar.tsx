@@ -32,7 +32,7 @@ const Navbar = () => {
         </ul>
         <SearchBar />
       </form>
-      <ul className="flex">
+      <ul className="flex items-center">
         <li className="relative">
           <MessagesMenu />
         </li>
