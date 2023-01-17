@@ -16,7 +16,6 @@ import clsxm from '~/utils/clsxm'
 const RegisterPage = () => {
   const [isSubmit, setIsSubmit] = useState(false)
   const [country, setCountry] = useState<DataSelect | undefined>()
-  // const [country, setCountry] = useState<string>()
 
   const onSubmit = (e: FormEvent) => {
     e.preventDefault()
