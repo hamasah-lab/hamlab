@@ -1,5 +1,6 @@
 import { usePathname } from 'next/navigation'
 import { HiChevronDown } from 'react-icons/hi'
+import { HiChevronUp } from 'react-icons/hi2'
 
 import CollapsibleButton from '~/components/shared/collapsible-button'
 
@@ -30,12 +31,12 @@ const NavLinkCollapsible = (props: NavLinkCollapsibleProps) => {
 
   return (
     <CollapsibleButton
-      triggerClassName={[navLinkMainStyles, isActive ? navLinkActiveStyles : '']}
+      triggerClassName={[navLinkMainStyles, 'group', isActive ? navLinkActiveStyles : '']}
       trigger={
         <>
           <Icon size={20} className="mr-5 ml-1" />
           <span className="w-full text-left">{text}</span>
-          <HiChevronDown size={20} className="ml-auto" />
+          <HiChevronUp className="h-5 w-5 text-purple-500 transition-all duration-300 group-data-[headlessui-state=open]:rotate-180 group-data-[headlessui-state=open]:transform" />
         </>
       }
       content={
