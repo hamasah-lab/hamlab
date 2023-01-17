@@ -32,7 +32,7 @@ const RegisterPage = () => {
       <div className="container flex flex-row justify-center">
         <form
           className={clsxm(
-            'bg-w group h-min basis-1/2 rounded border-t-2 border-t-custom-purple bg-white shadow-sm',
+            'group basis-1/2 rounded border-t-2 border-t-custom-purple bg-white shadow-sm',
             isSubmit ? 'useValidation' : ''
           )}
           onSubmit={e => onSubmit(e)}
