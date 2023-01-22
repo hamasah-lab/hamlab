@@ -1,4 +1,4 @@
-import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
+import { Menu } from '@headlessui/react'
 import React from 'react'
 
 import clsxm from '~/utils/clsxm'
@@ -12,14 +12,15 @@ const DropdownItem = (props: DropdownItemProps) => {
   const { children, className } = props
 
   return (
-    <DropdownMenu.Item
+    <Menu.Item
+      as="div"
       className={clsxm(
         'relative flex w-full select-none items-center rounded py-2 pl-6 leading-none outline-none transition hover:bg-gray-200',
         className
       )}
     >
       {children}
-    </DropdownMenu.Item>
+    </Menu.Item>
   )
 }
 

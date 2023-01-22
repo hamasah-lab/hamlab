@@ -20,7 +20,7 @@ const Navbar = () => {
   return (
     <nav
       className={clsxm(
-        'absolute  right-0 z-[890] flex h-[70px] flex-wrap items-center justify-between bg-transparent py-2 px-4 transition-all duration-500 md:right-[5px] md:flex-nowrap',
+        'absolute  right-0 z-[890] flex h-[70px] flex-wrap items-center justify-between bg-transparent bg-violet-600 py-2 px-4 transition-all duration-500 md:flex-nowrap',
         isSidebarOpen ? 'left-0' : 'left-[5px] md:left-[250px]'
       )}
     >
@@ -32,7 +32,7 @@ const Navbar = () => {
         </ul>
         <SearchBar />
       </form>
-      <ul className="flex">
+      <ul className="flex items-center">
         <li className="relative">
           <MessagesMenu />
         </li>
@@ -41,7 +41,6 @@ const Navbar = () => {
         </li>
         <li className="relative px-4">
           <Dropdown
-            withArrow={false}
             trigger={
               <button className="inline-flex h-full items-center font-semibold text-white focus-visible:outline-none">
                 <Image

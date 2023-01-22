@@ -1,97 +1,31 @@
-import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
+import { Menu, Transition } from '@headlessui/react'
 import React from 'react'
 
 interface DropdownProps {
   children: React.ReactNode
   trigger: React.ReactNode
-  align?: 'start' | 'center' | 'end'
-  sideOffset?: number
-  withArrow?: boolean
 }
 
 const Dropdown = (props: DropdownProps) => {
-  const { children, trigger, align = 'center', sideOffset = 5, withArrow = true } = props
+  const { children, trigger } = props
 
   return (
-    <DropdownMenu.Root>
-      <DropdownMenu.Trigger asChild>{trigger}</DropdownMenu.Trigger>
+    <Menu as="div" className="relative inline-block">
+      <Menu.Button>{trigger}</Menu.Button>
 
-      <DropdownMenu.Portal>
-        <DropdownMenu.Content
-          className="DropdownMenuContent min-w-[220px] rounded-md bg-white p-1 shadow-md"
-          sideOffset={sideOffset}
-          align={align}
-        >
+      <Transition
+        enter="transition ease-out duration-100"
+        enterFrom="transform opacity-0 scale-95"
+        enterTo="transform opacity-100 scale-100"
+        leave="transition ease-in duration-75"
+        leaveFrom="transform opacity-100 scale-100"
+        leaveTo="transform opacity-0 scale-95"
+      >
+        <Menu.Items className="absolute right-0 mt-2 min-w-[220px] origin-top-right divide-y divide-gray-100 rounded bg-white p-1 shadow-md ring-1 ring-black ring-opacity-5 focus:outline-none">
           {children}
-          {withArrow ? <DropdownMenu.Arrow className="fill-white" /> : null}
-        </DropdownMenu.Content>
-      </DropdownMenu.Portal>
-
-      <style jsx global>{`
-        .DropdownMenuContent {
-          animation-duration: 400ms;
-          animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
-          will-change: transform, opacity;
-        }
-
-        .DropdownMenuContent[data-side='top'] {
-          animation-name: slideDownAndFade;
-        }
-        .DropdownMenuContent[data-side='right'] {
-          animation-name: slideLeftAndFade;
-        }
-        .DropdownMenuContent[data-side='bottom'] {
-          animation-name: slideUpAndFade;
-        }
-        .DropdownMenuContent[data-side='left'] {
-          animation-name: slideRightAndFade;
-        }
-
-        @keyframes slideUpAndFade {
-          from {
-            opacity: 0;
-            transform: translateY(2px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @keyframes slideRightAndFade {
-          from {
-            opacity: 0;
-            transform: translateX(-2px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-
-        @keyframes slideDownAndFade {
-          from {
-            opacity: 0;
-            transform: translateY(-2px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @keyframes slideLeftAndFade {
-          from {
-            opacity: 0;
-            transform: translateX(2px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-      `}</style>
-    </DropdownMenu.Root>
+        </Menu.Items>
+      </Transition>
+    </Menu>
   )
 }
 
