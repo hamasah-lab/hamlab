@@ -21,7 +21,7 @@ const Navbar = () => {
     <nav
       className={clsxm(
         'absolute  right-0 z-[890] flex h-[70px] flex-wrap items-center justify-between bg-transparent bg-violet-600 py-2 px-4 transition-all duration-500 md:flex-nowrap',
-        isSidebarOpen ? 'left-0' : 'left-[5px] md:left-[250px]'
+        isSidebarOpen ? 'left-0' : 'left-[5px] blur-sm md:left-[250px] md:blur-none'
       )}
     >
       <form className="mr-auto flex flex-wrap items-center">
