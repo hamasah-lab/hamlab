@@ -9,7 +9,7 @@ interface LayoutContext {
 const LayoutContext = createContext<LayoutContext | undefined>(undefined)
 
 const LayoutContextProvider = ({ children }: { children: React.ReactNode }) => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true)
 
   const sidebarOpenToggle = (): void => {
     setIsSidebarOpen(prev => !prev)

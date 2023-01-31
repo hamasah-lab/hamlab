@@ -12,6 +12,7 @@ import MessagesMenu from './messages-menu'
 import NotificationsMenu from './notifications-menu'
 import profile from './profile.png'
 import SearchBar from './search-bar'
+import SearchModal from './search-modal'
 import SidebarToggle from './sidebar-toggle'
 
 const Navbar = () => {
@@ -21,7 +22,7 @@ const Navbar = () => {
     <nav
       className={clsxm(
         'absolute  right-0 z-[890] flex h-[70px] flex-wrap items-center justify-between bg-transparent bg-violet-600 py-2 px-4 transition-all duration-500 md:flex-nowrap',
-        isSidebarOpen ? 'left-0' : 'left-[5px] blur-sm md:left-[250px] md:blur-none'
+        isSidebarOpen ? 'left-[5px] blur-sm md:left-[250px] md:blur-none' : 'left-0'
       )}
     >
       <form className="mr-auto flex flex-wrap items-center">
@@ -31,6 +32,7 @@ const Navbar = () => {
           </li>
         </ul>
         <SearchBar />
+        <SearchModal />
       </form>
       <ul className="flex items-center">
         <li className="relative">

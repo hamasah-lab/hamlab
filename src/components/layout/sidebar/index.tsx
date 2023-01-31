@@ -21,7 +21,7 @@ const Sidebar = () => {
   useClickAway(
     sidebarRef,
     () => {
-      if (breakpoint === 's') {
+      if (breakpoint === 's' && isSidebarOpen) {
         sidebarOpenToggle()
       }
     },
@@ -33,7 +33,7 @@ const Sidebar = () => {
       ref={sidebarRef}
       className={clsxm(
         'fixed top-0 z-[891] h-full w-[250px] overflow-hidden bg-white shadow-md outline-none transition-all duration-500 md:z-[800]',
-        isSidebarOpen ? '-left-[250px]' : 'left-0'
+        isSidebarOpen ? 'left-0' : '-left-[250px]'
       )}
     >
       <aside>
