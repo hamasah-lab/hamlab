@@ -9,19 +9,23 @@ const Footer = () => {
   return (
     <footer
       className={clsxm(
-        'mt-10 inline-flex w-full border-t border-t-gray-200 py-5 pr-8 text-gray-500 transition-all duration-500',
-        isSidebarOpen ? 'pl-[50px]' : 'pl-[280px]'
+        'mt-10 flex w-full flex-col items-center border-t border-t-gray-200 py-5 pr-8 text-sm text-gray-500 transition-all duration-500 md:flex-row md:text-base',
+        'pl-4 pr-4 md:pr-0',
+        isSidebarOpen ? 'md:pl-[280px]' : 'md:pl-[50px]'
       )}
     >
-      Copyright &copy; 2023-present. Build with ❤️ by
-      <a
-        href="https://github.com/hamasah-lab"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="ml-1 text-purple-500"
-      >
-        Hamasah Lab
-      </a>
+      <span>Copyright &copy; 2023-present. </span>
+      <div className="md:ml-1">
+        <span>Build with ❤️ by</span>
+        <a
+          href="https://github.com/hamasah-lab"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="ml-1 text-purple-500"
+        >
+          Hamasah Lab
+        </a>
+      </div>
     </footer>
   )
 }
