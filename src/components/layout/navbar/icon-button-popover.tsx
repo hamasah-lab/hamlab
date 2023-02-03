@@ -1,10 +1,10 @@
 import React, { forwardRef } from 'react'
 
-interface DropdownProps {
+interface PopoverProps {
   icon: React.ReactNode
 }
 
-const IconDropdown = forwardRef((props: DropdownProps, ref: any) => {
+const PopoverIcon = forwardRef((props: PopoverProps, ref: any) => {
   const { icon } = props
 
   return (
@@ -19,6 +19,6 @@ const IconDropdown = forwardRef((props: DropdownProps, ref: any) => {
   )
 })
 
-IconDropdown.displayName = 'IconDropdown'
+PopoverIcon.displayName = 'PopoverIcon'
 
-export default IconDropdown
+export default PopoverIcon

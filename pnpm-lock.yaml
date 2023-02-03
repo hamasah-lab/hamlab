@@ -5,6 +5,7 @@ specifiers:
   '@commitlint/config-conventional': ^17.4.2
   '@headlessui/react': ^1.7.8
   '@next/font': 13.1.6
+  '@popperjs/core': ^2.11.6
   '@types/node': 18.11.18
   '@types/react': 18.0.27
   '@types/react-dom': 18.0.10
@@ -28,6 +29,7 @@ specifiers:
   react: 18.2.0
   react-dom: 18.2.0
   react-icons: ^4.7.1
+  react-popper: ^2.3.0
   react-use: ^17.4.0
   tailwind-merge: ^1.9.0
   tailwindcss: ^3.2.4
@@ -36,11 +38,13 @@ specifiers:
 dependencies:
   '@headlessui/react': 1.7.8_biqbaboplfbrettd7655fr4n2y
   '@next/font': 13.1.6
+  '@popperjs/core': 2.11.6
   clsx: 1.2.1
   next: 13.1.6_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-icons: 4.7.1_react@18.2.0
+  react-popper: 2.3.0_r6q5zrenym2zg7je7hgi674bti
   react-use: 17.4.0_biqbaboplfbrettd7655fr4n2y
   tailwind-merge: 1.9.0
   typescript: 4.9.5
@@ -549,6 +553,11 @@ packages:
       tiny-glob: 0.2.9
       tslib: 2.5.0
     dev: true
+
+  /@popperjs/core/2.11.6:
+    resolution:
+      { integrity: sha512-50/17A98tWUfQ176raKiOGXuYpLyyVMkxxG6oylzL3BPOlA6ADGdK7EYunSa4I064xerltq9TGXs8HmOk5E+vw== }
+    dev: false
 
   /@rushstack/eslint-patch/1.2.0:
     resolution:
@@ -3924,6 +3933,11 @@ packages:
       scheduler: 0.23.0
     dev: false
 
+  /react-fast-compare/3.2.0:
+    resolution:
+      { integrity: sha512-rtGImPZ0YyLrscKI9xTpV8psd6I8VAtjKCzQDlzyDvqJA8XOW78TXYQwNRNd8g8JZnDu8q9Fu/1v4HPAVwVdHA== }
+    dev: false
+
   /react-icons/4.7.1_react@18.2.0:
     resolution:
       { integrity: sha512-yHd3oKGMgm7zxo3EA7H2n7vxSoiGmHk5t6Ou4bXsfcgWyhfDKMpyKfhHR6Bjnn63c+YXBLBPUql9H4wPJM6sXw== }
@@ -3937,6 +3951,21 @@ packages:
     resolution:
       { integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ== }
     dev: true
+
+  /react-popper/2.3.0_r6q5zrenym2zg7je7hgi674bti:
+    resolution:
+      { integrity: sha512-e1hj8lL3uM+sgSR4Lxzn5h1GxBlpa4CQz0XLF8kx4MDrDRWY0Ena4c97PUeSX9i5W3UAfDP0z0FXCTQkoXUl3Q== }
+    peerDependencies:
+      '@popperjs/core': ^2.0.0
+      react: ^16.8.0 || ^17 || ^18
+      react-dom: ^16.8.0 || ^17 || ^18
+    dependencies:
+      '@popperjs/core': 2.11.6
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      react-fast-compare: 3.2.0
+      warning: 4.0.3
+    dev: false
 
   /react-universal-interface/0.6.2_react@18.2.0+tslib@2.5.0:
     resolution:
@@ -4863,6 +4892,13 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /warning/4.0.3:
+    resolution:
+      { integrity: sha512-rpJyN222KWIvHJ/F53XSZv0Zl/accqHR8et1kpaMTD/fLCRxtV8iX8czMzY7sVZupTI3zcUTg8eycS2kNF9l6w== }
+    dependencies:
+      loose-envify: 1.4.0
+    dev: false
 
   /which-boxed-primitive/1.0.2:
     resolution:
