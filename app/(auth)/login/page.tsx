@@ -1,5 +1,6 @@
 'use client'
 import Image from 'next/image'
+import Link from 'next/link'
 import { FormEvent, useState } from 'react'
 import { FaFacebook, FaTwitter } from 'react-icons/fa'
 
@@ -102,9 +103,9 @@ const LoginPage = () => {
 
       <p className="mt-12 text-sm text-gray-400">
         Don&apos;t have an account?&nbsp;
-        <a href="#" className="text-custom-purple">
+        <Link href="/register" className="text-custom-purple">
           Create One
-        </a>
+        </Link>
       </p>
       <p className="mt-12 text-sm text-gray-500">Copyright © HamLab 2022</p>
     </div>
