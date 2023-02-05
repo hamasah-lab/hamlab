@@ -1,15 +1,15 @@
 import { HiCodeBracket, HiOutlineBell } from 'react-icons/hi2'
 
-import DropdownItem from './dropdown-item'
-import IconDropdown from './icon-button-dropdown'
-import MenuDropdown from './menu-dropdown'
+import PopoverIcon from './icon-button-popover'
+import MenuPopover from './menu-popover'
+import PopoverItem from './popover-item'
 
 const NotificationsMenu = () => {
   return (
-    <MenuDropdown title="Notifications" trigger={<IconDropdown icon={<HiOutlineBell />} />}>
+    <MenuPopover title="Notifications" trigger={<PopoverIcon icon={<HiOutlineBell />} />}>
       {Array.from({ length: 5 }).map((_, i) => {
         return (
-          <DropdownItem key={i} className="border-b border-gray-100 py-4 transition hover:bg-gray-50">
+          <PopoverItem key={i} className="border-b border-gray-100 py-4 transition hover:bg-gray-50">
             <div className="inline-flex h-10 w-10 shrink-0 items-center rounded-full bg-purple-500 text-white">
               <HiCodeBracket className="h-5 w-full" />
             </div>
@@ -17,10 +17,10 @@ const NotificationsMenu = () => {
               <p className="text-sm">Template update is available now</p>
               <time className="text-[10px] uppercase text-gray-500">2 hours ago</time>
             </div>
-          </DropdownItem>
+          </PopoverItem>
         )
       })}
-    </MenuDropdown>
+    </MenuPopover>
   )
 }
 

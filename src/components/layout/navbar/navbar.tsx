@@ -6,12 +6,13 @@ import { HiArrowRightOnRectangle, HiChevronDown, HiOutlineBolt, HiOutlineUser, H
 import { useLayoutContext } from '~/contexts/layout-context'
 import clsxm from '~/utils/clsxm'
 
-import Dropdown from './dropdown'
-import DropdownItem from './dropdown-item'
 import MessagesMenu from './messages-menu'
 import NotificationsMenu from './notifications-menu'
+import Popover from './popover'
+import PopoverItem from './popover-item'
 import profile from './profile.png'
 import SearchBar from './search-bar'
+import SearchModal from './search-modal'
 import SidebarToggle from './sidebar-toggle'
 
 const Navbar = () => {
@@ -21,7 +22,7 @@ const Navbar = () => {
     <nav
       className={clsxm(
         'absolute  right-0 z-[890] flex h-[70px] flex-wrap items-center justify-between bg-transparent bg-violet-600 py-2 px-4 transition-all duration-500 md:flex-nowrap',
-        isSidebarOpen ? 'left-0' : 'left-[5px] md:left-[250px]'
+        isSidebarOpen ? 'left-[5px] blur-sm md:left-[250px] md:blur-none' : 'left-0'
       )}
     >
       <form className="mr-auto flex flex-wrap items-center">
@@ -31,6 +32,7 @@ const Navbar = () => {
           </li>
         </ul>
         <SearchBar />
+        <SearchModal />
       </form>
       <ul className="flex items-center">
         <li className="relative">
@@ -40,7 +42,7 @@ const Navbar = () => {
           <NotificationsMenu />
         </li>
         <li className="relative px-4">
-          <Dropdown
+          <Popover
             trigger={
               <button className="inline-flex h-full items-center font-semibold text-white focus-visible:outline-none">
                 <Image
@@ -56,7 +58,7 @@ const Navbar = () => {
             }
           >
             <p className="p-4 text-[10px] font-semibold uppercase leading-none tracking-wide">Logged in 5 mins ago</p>
-            <DropdownItem>
+            <PopoverItem>
               <Link
                 href="/"
                 className="inline-flex w-full appearance-none items-center gap-2 text-base font-light tracking-wide"
@@ -64,8 +66,8 @@ const Navbar = () => {
                 <HiOutlineUser />
                 <span>Profile</span>
               </Link>
-            </DropdownItem>
-            <DropdownItem>
+            </PopoverItem>
+            <PopoverItem>
               <Link
                 href="/"
                 className="inline-flex w-full appearance-none items-center gap-2 text-base font-light tracking-wide"
@@ -73,8 +75,8 @@ const Navbar = () => {
                 <HiOutlineBolt />
                 <span>Activities</span>
               </Link>
-            </DropdownItem>
-            <DropdownItem>
+            </PopoverItem>
+            <PopoverItem>
               <Link
                 href="/"
                 className="inline-flex w-full appearance-none items-center gap-2 text-base font-light tracking-wide"
@@ -82,14 +84,14 @@ const Navbar = () => {
                 <HiOutlineWrench />
                 <span>Settings</span>
               </Link>
-            </DropdownItem>
-            <DropdownItem className="hover:bg-red-200">
+            </PopoverItem>
+            <PopoverItem className="hover:bg-red-200">
               <button className="inline-flex w-full appearance-none items-center gap-2 text-base font-semibold tracking-wide text-red-600">
                 <HiArrowRightOnRectangle />
                 <span>Logout</span>
               </button>
-            </DropdownItem>
-          </Dropdown>
+            </PopoverItem>
+          </Popover>
         </li>
       </ul>
     </nav>
