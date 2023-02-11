@@ -23,6 +23,9 @@ module.exports = {
         'custom-white-purple': '#fdfdff',
         'custom-white-purple-2': '#e4e6fc',
       },
+      screens: {
+        xs: '400px',
+      },
     },
   },
   plugins: [],
