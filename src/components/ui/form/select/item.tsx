@@ -19,7 +19,9 @@ const SelectItem = ({ value, children, iconCheck, className }: PropSelectItem & 
     {({ selected }) => (
       <div className="flex w-full items-center justify-start gap-2">
         <div className={clsxm(selected ? '' : 'invisible')}>{iconCheck}</div>
-        <span className={clsxm('block truncate', selected ? 'font-medium' : 'font-normal')}>{children}</span>
+        <span className={clsxm('block truncate', selected ? 'font-medium' : 'font-normal')}>
+          {children} {selected}
+        </span>
       </div>
     )}
   </Listbox.Option>

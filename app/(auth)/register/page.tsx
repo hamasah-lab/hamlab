@@ -31,7 +31,7 @@ const RegisterPage = () => {
       <div className="container flex flex-row justify-center">
         <form
           className={clsxm(
-            'group basis-1/2 rounded border-t-2 border-t-custom-purple bg-white shadow-sm',
+            'group basis-11/12 rounded border-t-2 border-t-custom-purple bg-white shadow-sm sm:basis-3/4 lg:basis-1/2',
             isSubmit ? 'useValidation' : ''
           )}
           onSubmit={e => onSubmit(e)}
@@ -120,11 +120,11 @@ const RegisterPage = () => {
               Please enter your address
             </p>
           </div>
-          <div className="mt-1 flex w-full gap-6">
-            <div className="basis-1/2 pl-6">
+          <div className="mt-1 grid grid-cols-2 gap-6">
+            <div className="pl-6">
               <Label htmlFor="country">Country</Label>
               <SelectInput
-                placeholder="Chose Country"
+                placeholder="Chose Country efewf ewfewfwe fewf"
                 id="country"
                 onChange={value => setCountry(value)}
                 data={countries.map(country => ({ value: country.name.toLowerCase(), text: country.name }))}
@@ -134,7 +134,7 @@ const RegisterPage = () => {
                 Please enter your country
               </p>
             </div>
-            <div className="basis-1/2 pr-6">
+            <div className="pr-6">
               <Label htmlFor="state">State / Province / Region</Label>
               <TextInput
                 type="text"
