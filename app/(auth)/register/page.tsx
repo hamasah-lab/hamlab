@@ -124,7 +124,7 @@ const RegisterPage = () => {
             <div className="pl-6">
               <Label htmlFor="country">Country</Label>
               <SelectInput
-                placeholder="Chose Country efewf ewfewfwe fewf"
+                placeholder="Chose Country"
                 id="country"
                 onChange={value => setCountry(value)}
                 data={countries.map(country => ({ value: country.name.toLowerCase(), text: country.name }))}
