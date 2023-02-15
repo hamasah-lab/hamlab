@@ -1,5 +1,5 @@
 import { Listbox, Transition } from '@headlessui/react'
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useRef, useState } from 'react'
 import { BsCheck } from 'react-icons/bs'
 import { HiChevronUpDown } from 'react-icons/hi2'
 
@@ -27,10 +27,11 @@ const SelectInput = ({
     setSelected(value)
     if (onChange) onChange(value)
   }
+  const options = useRef(data.map(e => item(e, iconCheck)))
 
   return (
     <Listbox value={selected} onChange={onSelectChange}>
-      <div className="relative mt-1">
+      <div className="mt-1 sm:relative">
         <Listbox.Button
           id={id}
           name={name}
@@ -47,8 +48,8 @@ const SelectInput = ({
           </span>
         </Listbox.Button>
         <Transition as={Fragment} leave="transition ease-in duration-100" leaveFrom="opacity-100" leaveTo="opacity-0">
-          <Listbox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-            {data.map(e => item(e, iconCheck))}
+          <Listbox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none max-sm:w-1/2 max-xs:w-9/12 sm:text-sm">
+            {options.current}
           </Listbox.Options>
         </Transition>
       </div>
