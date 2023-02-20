@@ -51,7 +51,7 @@ const LoginPage = () => {
               </p>
             </div>
 
-            <div className="mt-8 ">
+            <div className="mt-1">
               <div className="flex items-center justify-between">
                 <Label htmlFor="password">Password</Label>
                 <a href="#" className="text-xs text-custom-purple">
@@ -69,7 +69,7 @@ const LoginPage = () => {
               </p>
             </div>
 
-            <div className="mt-8 flex items-center">
+            <div className="mt-6 flex items-center">
               <CheckboxInput id="remmember" />
               <label htmlFor="remmember" className="ml-2 text-sm font-normal text-gray-500 ">
                 Remember Me
