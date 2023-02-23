@@ -1,4 +1,4 @@
-import { Card, CardBody, CardFooter, CardHeader } from '~/shared/card'
+import { Card, CardBody, CardFooter, CardHeader } from '~/dist/card'
 
 const CardComponentPage = () => {
   return (
