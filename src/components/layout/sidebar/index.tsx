@@ -17,6 +17,88 @@ const Sidebar = () => {
   const { isSidebarOpen, sidebarOpenToggle } = useLayoutContext()
   const breakpoint = useBreakpoint()
   const sidebarRef = useRef(null)
+  const generalComponent = [
+    {
+      href: '/general-component/alert',
+      text: 'Alert',
+    },
+    {
+      href: '/general-component/badge',
+      text: 'Badge',
+    },
+    {
+      href: '/general-component/breadcrumb',
+      text: 'Breadcrumb',
+    },
+    {
+      href: '/general-component/buttons',
+      text: 'Buttons',
+    },
+    {
+      href: '/general-component/card',
+      text: 'Card',
+    },
+    {
+      href: '/general-component/carousel',
+      text: 'Carousel',
+    },
+    {
+      href: '/general-component/collapse',
+      text: 'Collapse',
+    },
+    {
+      href: '/general-component/dropdown',
+      text: 'Dropdown',
+    },
+    {
+      href: '/general-component/form',
+      text: 'Form',
+    },
+    {
+      href: '/general-component/list-group',
+      text: 'List Group',
+    },
+    {
+      href: '/general-component/media-object',
+      text: 'Media Object',
+    },
+    {
+      href: '/general-component/modal',
+      text: 'Modal',
+    },
+    {
+      href: '/general-component/nav',
+      text: 'Nav',
+    },
+    {
+      href: '/general-component/navbar',
+      text: 'Navbar',
+    },
+    {
+      href: '/general-component/pagination',
+      text: 'Pagination',
+    },
+    {
+      href: '/general-component/popover',
+      text: 'Popover',
+    },
+    {
+      href: '/general-component/progress',
+      text: 'Progress',
+    },
+    {
+      href: '/general-component/table',
+      text: 'Table',
+    },
+    {
+      href: '/general-component/tooltip',
+      text: 'Tooltip',
+    },
+    {
+      href: '/general-component/typography',
+      text: 'Typography',
+    },
+  ]
 
   useClickAway(
     sidebarRef,
@@ -51,7 +133,7 @@ const Sidebar = () => {
             <NavLink icon={HiPaperClip} href="/about" text="About" />
           </li>
           <li>
-            <NavLinkCollapsible icon={HiAcademicCap} text="Abstract" />
+            <NavLinkCollapsible icon={HiAcademicCap} text="General Component" subNavLink={generalComponent} />
           </li>
         </ul>
       </aside>

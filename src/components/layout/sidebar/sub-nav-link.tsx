@@ -24,4 +24,5 @@ const SubNavLink = (props: SubNavLinkProps) => {
   )
 }
 
+export type { SubNavLinkProps }
 export default SubNavLink
