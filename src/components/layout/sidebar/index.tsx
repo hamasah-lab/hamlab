@@ -19,83 +19,83 @@ const Sidebar = () => {
   const sidebarRef = useRef(null)
   const generalComponent = [
     {
-      href: '/general-component/alert',
+      href: '/component/alert',
       text: 'Alert',
     },
     {
-      href: '/general-component/badge',
+      href: '/component/badge',
       text: 'Badge',
     },
     {
-      href: '/general-component/breadcrumb',
+      href: '/component/breadcrumb',
       text: 'Breadcrumb',
     },
     {
-      href: '/general-component/buttons',
+      href: '/component/buttons',
       text: 'Buttons',
     },
     {
-      href: '/general-component/card',
+      href: '/component/card',
       text: 'Card',
     },
     {
-      href: '/general-component/carousel',
+      href: '/component/carousel',
       text: 'Carousel',
     },
     {
-      href: '/general-component/collapse',
+      href: '/component/collapse',
       text: 'Collapse',
     },
     {
-      href: '/general-component/dropdown',
+      href: '/component/dropdown',
       text: 'Dropdown',
     },
     {
-      href: '/general-component/form',
+      href: '/component/form',
       text: 'Form',
     },
     {
-      href: '/general-component/list-group',
+      href: '/component/list-group',
       text: 'List Group',
     },
     {
-      href: '/general-component/media-object',
+      href: '/component/media-object',
       text: 'Media Object',
     },
     {
-      href: '/general-component/modal',
+      href: '/component/modal',
       text: 'Modal',
     },
     {
-      href: '/general-component/nav',
+      href: '/component/nav',
       text: 'Nav',
     },
     {
-      href: '/general-component/navbar',
+      href: '/component/navbar',
       text: 'Navbar',
     },
     {
-      href: '/general-component/pagination',
+      href: '/component/pagination',
       text: 'Pagination',
     },
     {
-      href: '/general-component/popover',
+      href: '/component/popover',
       text: 'Popover',
     },
     {
-      href: '/general-component/progress',
+      href: '/component/progress',
       text: 'Progress',
     },
     {
-      href: '/general-component/table',
+      href: '/component/table',
       text: 'Table',
     },
     {
-      href: '/general-component/tooltip',
+      href: '/component/tooltip',
       text: 'Tooltip',
     },
     {
-      href: '/general-component/typography',
+      href: '/component/typography',
       text: 'Typography',
     },
   ]
