@@ -17,7 +17,22 @@ const MainContent = ({ children }: { children: React.ReactNode }) => {
       )}
     >
       <section className="relative z-[1]">
-        <SectionHeader title="Dashboard" />
+        <SectionHeader
+          title="Dashboard"
+          breadcrumb={[
+            {
+              text: 'Dashboard',
+              href: '/',
+            },
+            {
+              text: 'General Component',
+              href: '/',
+            },
+            {
+              text: 'Badge',
+            },
+          ]}
+        />
         {children}
       </section>
     </main>
