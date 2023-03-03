@@ -1,11 +1,10 @@
 import Link from 'next/link'
 import { CgFormatSlash } from 'react-icons/cg'
 
+import { Breadcrumb } from '~/contexts/breadcrumb-context'
+
 interface BreadcrumbHeaderProps {
-  breadcrumb: {
-    text: string
-    href?: string
-  }[]
+  breadcrumb: Breadcrumb
 }
 
 const BreadcrumbHeader = ({ breadcrumb }: BreadcrumbHeaderProps) => (

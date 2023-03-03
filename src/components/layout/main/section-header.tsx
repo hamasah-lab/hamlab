@@ -1,11 +1,10 @@
+import { Breadcrumb } from '~/contexts/breadcrumb-context'
+
 import BreadcrumbHeader from './breadcrumb-header'
 
 interface SectionHeaderProps {
   title: string
-  breadcrumb?: {
-    text: string
-    href?: string
-  }[]
+  breadcrumb?: Breadcrumb
 }
 
 const SectionHeader = ({ title, breadcrumb }: SectionHeaderProps) => {
