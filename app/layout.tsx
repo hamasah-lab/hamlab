@@ -1,12 +1,19 @@
 import '~/styles/globals.css'
 
-import { Nunito } from '@next/font/google'
+import { Nunito } from 'next/font/google'
 import React from 'react'
 
 const nunito = Nunito({
   variable: '--font-nunito',
   subsets: ['latin'],
 })
+
+export const metadata = {
+  title: {
+    default: 'Hamlab',
+    template: '%s | Hamlab',
+  },
+}
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (

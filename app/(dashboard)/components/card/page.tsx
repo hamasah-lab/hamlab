@@ -2,6 +2,10 @@ import { Button } from '~/dist/button'
 import { Card, CardBody, CardFooter, CardHeader, CardText } from '~/dist/card'
 import { CustomLink } from '~/dist/link'
 
+export const metadata = {
+  title: 'Card',
+}
+
 const CardComponentPage = () => {
   return (
     <div className="flex gap-4">
