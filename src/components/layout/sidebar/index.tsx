@@ -17,6 +17,88 @@ const Sidebar = () => {
   const { isSidebarOpen, sidebarOpenToggle } = useLayoutContext()
   const breakpoint = useBreakpoint()
   const sidebarRef = useRef(null)
+  const generalComponent = [
+    {
+      href: '/components/alert',
+      text: 'Alert',
+    },
+    {
+      href: '/components/badge',
+      text: 'Badge',
+    },
+    {
+      href: '/components/breadcrumb',
+      text: 'Breadcrumb',
+    },
+    {
+      href: '/components/buttons',
+      text: 'Buttons',
+    },
+    {
+      href: '/components/card',
+      text: 'Card',
+    },
+    {
+      href: '/components/carousel',
+      text: 'Carousel',
+    },
+    {
+      href: '/components/collapse',
+      text: 'Collapse',
+    },
+    {
+      href: '/components/dropdown',
+      text: 'Dropdown',
+    },
+    {
+      href: '/components/form',
+      text: 'Form',
+    },
+    {
+      href: '/components/list-group',
+      text: 'List Group',
+    },
+    {
+      href: '/components/media-object',
+      text: 'Media Object',
+    },
+    {
+      href: '/components/modal',
+      text: 'Modal',
+    },
+    {
+      href: '/components/nav',
+      text: 'Nav',
+    },
+    {
+      href: '/components/navbar',
+      text: 'Navbar',
+    },
+    {
+      href: '/components/pagination',
+      text: 'Pagination',
+    },
+    {
+      href: '/components/popover',
+      text: 'Popover',
+    },
+    {
+      href: '/components/progress',
+      text: 'Progress',
+    },
+    {
+      href: '/components/table',
+      text: 'Table',
+    },
+    {
+      href: '/components/tooltip',
+      text: 'Tooltip',
+    },
+    {
+      href: '/components/typography',
+      text: 'Typography',
+    },
+  ]
 
   useClickAway(
     sidebarRef,
@@ -51,7 +133,7 @@ const Sidebar = () => {
             <NavLink icon={HiPaperClip} href="/about" text="About" />
           </li>
           <li>
-            <NavLinkCollapsible icon={HiAcademicCap} text="Abstract" />
+            <NavLinkCollapsible icon={HiAcademicCap} text="General Component" subNavLink={generalComponent} />
           </li>
         </ul>
       </aside>

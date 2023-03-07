@@ -8,13 +8,14 @@ interface CollapsibleButtonProps {
   trigger: React.ReactNode
   content: React.ReactNode
   triggerClassName?: ClassValue
+  defaultOpen?: boolean
 }
 
 const CollapsibleButton = (props: CollapsibleButtonProps) => {
-  const { trigger, content, triggerClassName } = props
+  const { trigger, content, triggerClassName, defaultOpen } = props
 
   return (
-    <Disclosure>
+    <Disclosure defaultOpen={defaultOpen}>
       <Disclosure.Button className={clsxm(triggerClassName)}>{trigger}</Disclosure.Button>
       <Transition
         enter="transition duration-300 ease-out"
