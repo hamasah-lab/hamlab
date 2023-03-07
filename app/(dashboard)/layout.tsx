@@ -7,6 +7,13 @@ import Sidebar from '~/components/layout/sidebar'
 import BreadcrumbContextProvider from '~/contexts/breadcrumb-context'
 import LayoutContextProvider from '~/contexts/layout-context'
 
+export const metadata = {
+  title: {
+    default: 'Dashboard',
+    template: '%s | Hamlab',
+  },
+}
+
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <LayoutContextProvider>
