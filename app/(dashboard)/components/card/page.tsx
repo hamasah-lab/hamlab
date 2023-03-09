@@ -10,7 +10,10 @@ export const metadata = {
 const CardComponentPage = () => {
   return (
     <div className="flex flex-col">
-      <SectionTitle title="Cards" />
+      <SectionTitle
+        title="Cards"
+        subTitle="Cards provide a flexible and extensible content container with multiple variants and options."
+      />
 
       <div className="flex gap-4">
         <div className="relative flex max-w-[50%] shrink-0 grow-0 basis-1/2 flex-col gap-8">
