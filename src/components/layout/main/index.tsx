@@ -14,14 +14,12 @@ const MainContent = ({ children }: { children: React.ReactNode }) => {
   return (
     <main
       className={clsxm(
-        'relative h-full w-full pr-[30px] pt-20 transition-all duration-500',
+        'relative min-h-full w-full py-20 pr-[30px] transition-all duration-500',
         isSidebarOpen ? 'pl-[30px] blur-sm md:pl-[280px] md:blur-none' : 'pl-[30px]'
       )}
     >
-      <section className="relative z-[1]">
-        <SectionHeader title="Dashboard" breadcrumb={breadcrumb} />
-        {children}
-      </section>
+      <SectionHeader title="Dashboard" breadcrumb={breadcrumb} />
+      {children}
     </main>
   )
 }
