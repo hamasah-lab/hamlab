@@ -9,14 +9,9 @@ export const metadata = {
 
 const CardComponentPage = () => {
   return (
-    <div className="flex flex-col">
-      <SectionTitle
-        title="Cards"
-        subTitle="Cards provide a flexible and extensible content container with multiple variants and options."
-      />
-
+    <div>
       <div className="flex gap-4">
-        <div className="relative flex max-w-[50%] shrink-0 grow-0 basis-1/2 flex-col gap-8">
+        <div className="flex max-w-[50%] shrink-0 grow-0 basis-1/2 flex-col gap-8">
           <Card>
             <CardHeader title="Header" />
             <CardBody>
@@ -40,7 +35,7 @@ const CardComponentPage = () => {
             </CardFooter>
           </Card>
         </div>
-        <div className="relative flex max-w-[50%] shrink-0 grow-0 basis-1/2 flex-col gap-8">
+        <div className="flex max-w-[50%] shrink-0 grow-0 basis-1/2 flex-col gap-8">
           <Card>
             <CardHeader title="Header" />
             <CardBody>
@@ -66,9 +61,68 @@ const CardComponentPage = () => {
             <CardBody>
               <CardText>This is some text within a card body.</CardText>
             </CardBody>
-            <CardFooter className="bg-gray-200">Footer</CardFooter>
+            <CardFooter className="bg-gray-50">Footer</CardFooter>
           </Card>
         </div>
+      </div>
+
+      <h2 className="mt-20 text-3xl">Card variants</h2>
+      <div className="grid grid-cols-4 gap-8">
+        <Card variant="primary">
+          <CardHeader title="Primary" />
+          <CardBody>
+            <CardText>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis, odit.</CardText>
+          </CardBody>
+        </Card>
+
+        <Card variant="secondary">
+          <CardHeader title="Secondary" />
+          <CardBody>
+            <CardText>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis, facilis.</CardText>
+          </CardBody>
+        </Card>
+
+        <Card variant="danger">
+          <CardHeader title="Danger" />
+          <CardBody>
+            <CardText>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis, facilis.</CardText>
+          </CardBody>
+        </Card>
+
+        <Card variant="warning">
+          <CardHeader title="Warning" />
+          <CardBody>
+            <CardText>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis, facilis.</CardText>
+          </CardBody>
+        </Card>
+
+        <Card variant="info">
+          <CardHeader title="Info" />
+          <CardBody>
+            <CardText>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis, facilis.</CardText>
+          </CardBody>
+        </Card>
+
+        <Card variant="success">
+          <CardHeader title="Success" />
+          <CardBody>
+            <CardText>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis, facilis.</CardText>
+          </CardBody>
+        </Card>
+
+        <Card variant="light">
+          <CardHeader title="Light" />
+          <CardBody>
+            <CardText>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis, facilis.</CardText>
+          </CardBody>
+        </Card>
+
+        <Card variant="dark">
+          <CardHeader title="Dark" />
+          <CardBody>
+            <CardText>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis, facilis.</CardText>
+          </CardBody>
+        </Card>
       </div>
     </div>
   )
