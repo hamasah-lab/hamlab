@@ -8,7 +8,7 @@ import { SectionTitle } from '~/dist/section-title'
 import { Text } from '~/dist/text'
 import useBreadcrumbContext from '~/hooks/use-breadcrumb-context'
 
-const CardComponentPage = () => {
+const AlertComponentPage = () => {
   const { setBreadcrumb, breadcrumb } = useBreadcrumbContext()
 
   useEffect(() => {
@@ -130,4 +130,4 @@ const CardComponentPage = () => {
   )
 }
 
-export default CardComponentPage
+export default AlertComponentPage
