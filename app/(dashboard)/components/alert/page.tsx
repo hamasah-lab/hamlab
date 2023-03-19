@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react'
 
+import { Card, CardBody, CardHeader } from '~/dist/card'
 import { SectionTitle } from '~/dist/section-title'
 import useBreadcrumbContext from '~/hooks/use-breadcrumb-context'
 
@@ -32,7 +33,14 @@ const AlertComponentPage = () => {
       />
 
       <div className="flex gap-4">
-        <div className="relative flex max-w-[50%] shrink-0 grow-0 basis-1/2 flex-col gap-8"></div>
+        <div className="relative flex max-w-[50%] shrink-0 grow-0 basis-1/2 flex-col gap-8">
+          <Card>
+            <CardHeader title="Default" />
+            <CardBody>
+              <div className="flex flex-col"></div>
+            </CardBody>
+          </Card>
+        </div>
         <div className="relative flex max-w-[50%] shrink-0 grow-0 basis-1/2 flex-col gap-8"></div>
       </div>
     </div>
