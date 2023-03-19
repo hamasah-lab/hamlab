@@ -18,10 +18,24 @@ const BreadcrumbContextProvider = ({ children }: { children: ReactNode }) => {
   const [breadcrumb, setBreadcrumb] = useState<Breadcrumb | undefined>(undefined)
   const path = usePathname()
   const params = useSearchParams()
+  const [newBreadcrumb, setNewBreadcrumb] = useState<Breadcrumb | undefined>(undefined)
 
-  useEffect(() => setBreadcrumb(undefined), [path, params])
+  useEffect(() => {
+    setBreadcrumb(undefined)
+  }, [path, params])
 
-  return <BreadcrumbContext.Provider value={{ breadcrumb, setBreadcrumb }}>{children}</BreadcrumbContext.Provider>
+  useEffect(() => {
+    if (!breadcrumb && newBreadcrumb) {
+      setBreadcrumb(newBreadcrumb)
+      setNewBreadcrumb(undefined)
+    }
+  }, [breadcrumb, newBreadcrumb])
+
+  return (
+    <BreadcrumbContext.Provider value={{ breadcrumb, setBreadcrumb: setNewBreadcrumb }}>
+      {children}
+    </BreadcrumbContext.Provider>
+  )
 }
 
 export type { Breadcrumb }
