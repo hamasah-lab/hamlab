@@ -9,7 +9,7 @@ import { Text } from '~/dist/text'
 import useBreadcrumbContext from '~/hooks/use-breadcrumb-context'
 
 const AlertComponentPage = () => {
-  const { setBreadcrumb, breadcrumb } = useBreadcrumbContext()
+  const { setBreadcrumb } = useBreadcrumbContext()
 
   useEffect(() => {
     setBreadcrumb([
@@ -26,8 +26,6 @@ const AlertComponentPage = () => {
       },
     ])
   }, [setBreadcrumb])
-
-  useEffect(() => console.log(breadcrumb), [breadcrumb])
 
   return (
     <div className="flex flex-col">
