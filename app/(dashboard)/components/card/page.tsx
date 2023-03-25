@@ -9,7 +9,11 @@ export const metadata = {
 
 const CardComponentPage = () => {
   return (
-    <div>
+    <div className="flex flex-col">
+      <SectionTitle
+        title="Cards"
+        subTitle="Cards provide a flexible and extensible content container with multiple variants and options."
+      />
       <div className="flex gap-4">
         <div className="flex max-w-[50%] shrink-0 grow-0 basis-1/2 flex-col gap-8">
           <Card>
@@ -66,7 +70,11 @@ const CardComponentPage = () => {
         </div>
       </div>
 
-      <h2 className="mt-20 text-3xl">Card variants</h2>
+      <SectionTitle
+        title="Card variants"
+        subTitle="Basically, the card can be given a color variant."
+        className="mt-12"
+      />
       <div className="grid grid-cols-4 gap-8">
         <Card variant="primary">
           <CardHeader title="Primary" />
