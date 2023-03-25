@@ -15,10 +15,11 @@ const MainContent = ({ children }: { children: React.ReactNode }) => {
     <main
       className={clsxm(
         'relative min-h-full w-full py-20 pr-[30px] transition-all duration-500',
+        'relative min-h-full w-full py-20 pr-[30px] transition-all duration-500',
         isSidebarOpen ? 'pl-[30px] blur-sm md:pl-[280px] md:blur-none' : 'pl-[30px]'
       )}
     >
-      <SectionHeader breadcrumb={breadcrumb} />
+      <SectionHeader title="Dashboard" breadcrumb={breadcrumb} />
       {children}
     </main>
   )
