@@ -11,7 +11,7 @@ const CardHeader = (props: CardHeaderProps) => {
   return (
     <div
       className={clsxm(
-        'flex min-h-[70px] w-full items-center self-center border-b border-custom-white px-6 py-4 leading-7',
+        'flex min-h-[70px] w-full items-center justify-between self-center border-b border-custom-white px-6 py-4 leading-7',
         props.className
       )}
     >
