@@ -26,7 +26,7 @@ const Card = (props: CardProps) => {
     <div
       className={clsxm(
         'relative flex min-w-0 flex-col break-words rounded border-0 bg-white text-gray-500 shadow',
-        variants[variant!],
+        variants[variant ?? 'primary'],
         className
       )}
     >

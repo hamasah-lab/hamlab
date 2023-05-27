@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <footer
       className={clsxm(
-        'mt-auto flex w-full flex-col items-center border-t border-t-gray-200 py-5 pr-8 text-sm text-gray-500 transition-all duration-500 md:flex-row md:text-base',
+        'mt-10 flex w-full flex-col items-center border-t border-t-gray-200 py-5 pr-8 text-sm text-gray-500 transition-all duration-500 md:flex-row md:text-base',
         'pl-4 pr-4 md:pr-0',
         isSidebarOpen ? 'md:pl-[280px]' : 'md:pl-[50px]'
       )}
