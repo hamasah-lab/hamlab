@@ -18,10 +18,8 @@ const MainContent = ({ children }: { children: React.ReactNode }) => {
         isSidebarOpen ? 'pl-[30px] blur-sm md:pl-[280px] md:blur-none' : 'pl-[30px]'
       )}
     >
-      <section className="relative z-[1]">
-        <SectionHeader breadcrumb={breadcrumb} />
-        {children}
-      </section>
+      <SectionHeader title="Dashboard" breadcrumb={breadcrumb} />
+      {children}
     </main>
   )
 }
