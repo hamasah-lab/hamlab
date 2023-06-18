@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import { useRef } from 'react'
 import { HiAcademicCap, HiFire, HiPaperClip } from 'react-icons/hi'
+import { TbRectangleFilled } from 'react-icons/tb'
 import { createBreakpoint, useClickAway } from 'react-use'
 
 import { useLayoutContext } from '~/contexts/layout-context'
@@ -131,6 +132,9 @@ const Sidebar = () => {
           </li>
           <li>
             <NavLink icon={HiPaperClip} href="/about" text="About" />
+          </li>
+          <li>
+            <NavLink icon={TbRectangleFilled} href="/blank" text="Blank Page" />
           </li>
           <li>
             <NavLinkCollapsible icon={HiAcademicCap} text="General Component" subNavLink={generalComponent} />
